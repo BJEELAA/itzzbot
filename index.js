@@ -101,7 +101,9 @@ bot.on("message", async message => {
     var args = messageArray.slice(1);
 
     //console.log(command);
-
+    
+    // i fixed the prefix recognition bit, so it doesnt go through the entire thing but only the start of each character group, bit better
+    
     var givenPrefix = command.charAt(0);
 
     if (givenPrefix === '/') {
@@ -183,7 +185,9 @@ bot.on("message", async message => {
                 }
 
             }
-
+            
+            //roles? or r we just gonna make it so the bot role needs to be at the top?
+            
             if (!changeWord) {
 
                 sentenceUser = sentenceUser + " " + messageArray[y];
