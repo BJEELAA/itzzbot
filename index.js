@@ -117,7 +117,7 @@ bot.on("message", async message => {
         if (commands) commands.run(bot, message, args, prefix, options);
 
 
-    } else return console.log('Verkeerde prefix >_<');
+    } else return console.log('Verkeerde prefix >_< pog');
 
 
 
