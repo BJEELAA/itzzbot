@@ -11,7 +11,7 @@ const superAgent = require("superagent");
 
 module.exports.run = async (bot, message, args, prefix, options) => {
 
-    return console.log(`${message.author.tag} voerde het DUMMY command uit...`);
+    return console.log(`${message.author.tag} voerde het DUMMY command uit... poggers`);
 
 }
 
