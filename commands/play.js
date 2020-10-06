@@ -44,7 +44,9 @@ module.exports.run = async (bot, message, args, prefix, options) => {
         Play(bot, options, data);
 
     }else message.channel.send(`Toegevoegd aan de queue: ${info.title}`);
-
+    
+    //might wanna optimize this bit for the new update of ytdl
+    
     options.active.set(message.guild.id, data);
 
 }
@@ -52,7 +54,9 @@ module.exports.run = async (bot, message, args, prefix, options) => {
 async function Play(bot, options, data){
 
     bot.channels.get(data.queue[0].announceChannel).send(`Nu aan het spelen: ${data.queue[0].songTitle} - Aangevraagd door: ${data.queue[0].requester}`);
-
+    
+    //new default bitr is 12950, might wanna change so we dont light their servers on fire
+    
     var option = { seek:2, volume:1, bitrate:12800 };
 
     data.dispatcher = await data.connection.playStream(ytdl(data.queue[0].url, {filter: "audioonly"}), option);
